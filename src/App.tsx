@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,14 +11,7 @@ function App() {
         <p>
           Welcome to Stone-UI.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Get Started
-        </a>
+        <Link to="/Home">Get Started</Link>
       </header>
     </div>
   );
