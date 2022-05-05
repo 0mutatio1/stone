@@ -13,14 +13,17 @@
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-scripts": "5.0.0",
-        "typescript": "^4.6.3",
         "web-vitals": "^2.1.4"
     },
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "lint": "npm run lint-eslint && npm run lint-stylelint",
+        "lint-eslint": "eslint -c .eslintrc.js --ext .ts,.tsx,.js src",
+        "lint-stylelint": "stylelint --config .stylelintrc.js src/**/*.{less,css,scss}",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
     },
     "eslintConfig": {
         "extends": [
@@ -39,5 +42,50 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "commit-msg": "commitlint --config .commitlintrc.js -E HUSKY_GIT_PARAMS"
+        }
+    },
+    "lint-staged": {
+        "*.{ts,tsx,js}": [
+            "eslint --config .eslintrc.js"
+        ],
+        "*.{css,less,scss}": [
+            "stylelint --config .stylelintrc.js"
+        ],
+        "*.{ts,tsx,js,json,html,yml,css,less,scss,md}": [
+            "prettier --write"
+        ]
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^16.2.4",
+        "@commitlint/config-conventional": "^16.2.4",
+        "@typescript-eslint/eslint-plugin": "^5.22.0",
+        "@typescript-eslint/parser": "^5.22.0",
+        "conventional-changelog-cli": "^2.2.2",
+        "eslint": "^8.14.0",
+        "eslint-config-airbnb": "^19.0.4",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-config-standard": "^17.0.0",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-jsx-a11y": "^6.5.1",
+        "eslint-plugin-n": "^15.2.0",
+        "eslint-plugin-promise": "^6.0.0",
+        "eslint-plugin-react": "^7.29.4",
+        "eslint-plugin-react-hooks": "^4.5.0",
+        "eslint-plugin-unicorn": "^42.0.0",
+        "husky": "^7.0.4",
+        "lint-staged": "^12.4.1",
+        "prettier": "^2.6.2",
+        "stylelint": "^14.8.2",
+        "stylelint-config-prettier": "^9.0.3",
+        "stylelint-config-rational-order": "^0.1.2",
+        "stylelint-config-standard": "^25.0.0",
+        "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
+        "stylelint-order": "^5.0.0",
+        "typescript": "^4.6.4"
     }
 }

@@ -1,0 +1,11 @@
+/node_modules
+/build
+/dist
+package.json
+tsconfig.json
+.browserslistrc
+.eslintrc.js
+.gitignore
+.prettirrrc
+*.md
+*.test.*
