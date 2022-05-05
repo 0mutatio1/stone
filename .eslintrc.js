@@ -11,12 +11,12 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'airbnb',
+    'stylelint-config-prettier',
     // 'prettier' 及之后的配置要放到原来添加的配置的后面，这样才能让 prettier 禁用之后与其冲突的规则。
     'prettier',
     'prettier/@typescript-eslint',
     'prettier/react',
-    'prettier/unicorn',
-    'stylelint-config-prettier'
+    'prettier/unicorn'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
