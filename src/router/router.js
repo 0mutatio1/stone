@@ -19,7 +19,12 @@ const routes = [
   {
     path: '/Home',
     exact: true, //只有当路由完全匹配的时候才进行匹配
-    component: on_demand(() => import('../view/home/Home.tsx')),
+    component: on_demand(() => import('../view/home/index.tsx')),
+  },
+  {
+    path: '/button',
+    exact: true, //只有当路由完全匹配的时候才进行匹配
+    component: on_demand(() => import('../view/button/index.tsx')),
   },
   // 路由嵌套示例
   /*{

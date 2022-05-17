@@ -1,0 +1,12 @@
+.page-content {
+  display: flex;
+  flex-direction: row;
+}
+.page-content-menu {
+  display: flex;
+  flex-basis: 150px;
+}
+.page-content-view {
+  display: flex;
+  flex-basis: calc(100% - 150px);
+}

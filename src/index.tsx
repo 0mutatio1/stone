@@ -8,9 +8,18 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // 路由配置抽离
 import { renderRoutes } from 'react-router-config';
 import routes from './router/router';
+import STLayout from './view/layout/index';
 
 ReactDOM.render(
-  <Router>{renderRoutes(routes)}</Router>,
+  <Router>
+    {
+      ['', '/'].includes(window.location.pathname) ?
+      renderRoutes(routes) :
+      (<STLayout>
+        {renderRoutes(routes)}
+      </STLayout>)
+    }
+  </Router>,
   document.getElementById('root'),
 );
 
