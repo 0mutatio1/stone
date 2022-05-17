@@ -12,7 +12,7 @@ function render(props: any) {
       </header>
       <div className="page-content">
         <div className="page-content-menu">
-          <STMenu></STMenu>
+          <STMenu />
         </div>
         <div className="page-content-view">
           {props.children}

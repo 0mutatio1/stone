@@ -13,14 +13,12 @@ import STLayout from './view/layout/index';
 ReactDOM.render(
   <Router>
     {
-      ['', '/'].includes(window.location.pathname) ?
-      renderRoutes(routes) :
-      (<STLayout>
-        {renderRoutes(routes)}
-      </STLayout>)
+      ['', '/'].includes(window.location.pathname)
+        ? renderRoutes(routes)
+        : (<STLayout>{renderRoutes(routes)}</STLayout>)
     }
   </Router>,
-  document.getElementById('root'),
+  document.querySelector('#root'),
 );
 
 // If you want to start measuring performance in your app, pass a function
