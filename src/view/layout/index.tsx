@@ -2,7 +2,7 @@ import React from 'react';
 import './index.css';
 import STMenu from '../menu/index';
 
-function render(props: any) {
+function render(properties: any) {
   return (
     <div className="page">
       <header className="page-header">
@@ -12,10 +12,10 @@ function render(props: any) {
       </header>
       <div className="page-content">
         <div className="page-content-menu">
-          <STMenu></STMenu>
+          <STMenu />
         </div>
         <div className="page-content-view">
-          {props.children}
+          {properties.children}
         </div>
       </div>
     </div>

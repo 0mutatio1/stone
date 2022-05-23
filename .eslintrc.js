@@ -1,6 +1,6 @@
 // const OFF = 0;
 // const WARN = 1;
-const ERROR = 2;
+const ERROR = 2
 
 module.exports = {
   env: {
@@ -24,12 +24,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    'unicorn',
-    'promise',
-    '@typescript-eslint',
-  ],
+  plugins: ['react', 'unicorn', 'promise', '@typescript-eslint'],
   rules: {
     'import/extensions': [
       ERROR,
@@ -51,4 +46,4 @@ module.exports = {
       },
     },
   },
-};
+}
