@@ -83,6 +83,7 @@
         "lint-staged": "^12.4.1",
         "prettier": "^2.6.2",
         "react-router-config": "^5.1.1",
+        "sass": "^1.52.1",
         "stylelint": "^14.8.2",
         "stylelint-config-prettier": "^9.0.3",
         "stylelint-config-rational-order": "^0.1.2",

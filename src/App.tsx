@@ -1,7 +1,8 @@
+/* eslint-disable unicorn/filename-case */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../statics/images/logo.svg';
-import './index.css';
+import logo from './statics/images/logo.svg';
+import './App.css';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Welcome to Stone-UI.</p>
-        <Link to="/Home">Get Started</Link>
+        <Link to="/home">Get Started</Link>
       </header>
     </div>
   );

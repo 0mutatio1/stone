@@ -1,19 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-// 路由配置
-import { BrowserRouter } from 'react-router-dom';
+import './index.scss';
+
 // 路由配置抽离
 import reportWebVitals from './report-web-vitals';
 
-import Home from './view/home';
-
-import STLayout from './view/layout/index';
+import App from './App';
+import Home from './routes/home';
+import Button from './routes/button';
+import Table from './routes/table';
+import Dialog from './routes/dialog';
+import Form from './routes/form';
 
 ReactDOM.render(
   <BrowserRouter>
-    <Home />
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/home" element={<Home />}>
+        <Route path="button" element={<Button />} />
+        <Route path="table" element={<Table />} />
+        <Route path="dialog" element={<Dialog />} />
+        <Route path="form" element={<Form />} />
+      </Route>
+    </Routes>
   </BrowserRouter>,
   document.querySelector('#root'),
 );
