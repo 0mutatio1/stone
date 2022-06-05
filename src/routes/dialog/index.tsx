@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-export default function Dialog() : JSX.Element {
-  return (
-    <div className="dialog-container">
-      Dialog
-    </div>
-  );
-}
+const Dialog: FC = () => (
+  <div className="dialog-container">
+    Dialog
+  </div>
+);
+
+export default Dialog;

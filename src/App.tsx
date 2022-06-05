@@ -1,19 +1,19 @@
 /* eslint-disable unicorn/filename-case */
-import React from 'react';
+import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './statics/images/logo.svg';
-import './App.css';
+import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Welcome to Stone-UI.</p>
-        <Link to="/home">Get Started</Link>
-      </header>
-    </div>
-  );
-}
+const App: FC = () => (
+  <div className="stone">
+    <header className="header">
+      <img src={logo} className="logo" alt="logo" />
+      <h2 className="slogan">Welcome to Stone-UI.</h2>
+      <Link to="/home" className="goo">
+        get started
+      </Link>
+    </header>
+  </div>
+);
 
 export default App;
