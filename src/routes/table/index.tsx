@@ -1,14 +1,14 @@
 import React from 'react';
 
-export default function Table() {
-  return (
-    <table>
-      <thead>
-        <th>hh</th>
-      </thead>
-      <tbody>
-        <td>kkk</td>
-      </tbody>
-    </table>
-  );
-}
+const Table = () => (
+  <table>
+    <thead>
+      <th>hh</th>
+    </thead>
+    <tbody>
+      <td>kkk</td>
+    </tbody>
+  </table>
+);
+
+export default Table;

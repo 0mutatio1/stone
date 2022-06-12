@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-export default function Form() : JSX.Element {
-  return (
-    <div className="form-container">
-      Form
-    </div>
-  );
-}
+const Form: FC = () => (
+  <div className="form-container">
+    Form
+  </div>
+);
+
+export default Form;
