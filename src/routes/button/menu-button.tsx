@@ -1,4 +1,5 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
+import "./index.scss";
 
 interface Properties {
   text?: string;
@@ -28,41 +29,47 @@ export const MenuButton: FC<Properties> = ({
   list = [],
 }) => {
   let style = {
-    width: size + 20 + 'px',
+    minWidth: size + 20 + 'px',
     height: size + 'px',
     color: color,
     backgroundColor: '#3b6fff9e',
     border: 'none',
-    padding: '0px',
+    padding: '5px',
   };
 
-  let isContracted = true;
+  const [isContracted, setIsContracted] = useState(true);
+  const [value, setValue] = useState(text);
 
   return (
     <div>
-      <button
-        type="button"
-        style={style}
-        onClick={() => {
-          isContracted = false;
-        }}
-      >
-        {text}
-      </button>
+      <div className="button-container" 
+          onClick={() => {
+            setIsContracted(!isContracted);
+          }}>
+        <button
+          type="button"
+          style={style}
+        >
+          {value}
+        </button>
+        { !isContracted ? ">" : "<" }
+      </div>
       {!isContracted ? (
-        <ul>
+        <div className='menu-field'>
           {list.map((item: any, index: number) => (
-            <li
+            <div
+              className={`menu-field__item ${item === value ? ' menu-field__item__isActived' : null}`}
               key={index}
               onClick={() => {
                 onClick(item);
-                isContracted = true;
+                setValue(item);
+                setIsContracted(true);
               }}
             >
               {item}
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       ) : null}
     </div>
   );

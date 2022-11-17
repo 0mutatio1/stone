@@ -1,0 +1,16 @@
+.menu-field {
+    box-shadow: 2px 2px 5px 1px #d5d5d5;
+    width: 200px;
+    margin-left: 60px;
+    z-index: 5;
+    &__item:hover {
+        background-color: #fafafa;
+        color: rgb(28, 124, 214);
+    }
+    &__item {
+        &__isActived {
+            background-color: rgb(243, 243, 243);
+            color: rgb(28, 124, 214);
+        }
+    }
+}
