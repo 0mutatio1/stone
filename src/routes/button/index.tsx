@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NormalButton } from './normal-button';
 import { MenuButton } from './menu-button';
+import { ConsumerButton } from './consumer-button';
 
 function button() {
   return (
@@ -34,9 +35,29 @@ function button() {
           <p>default menu button</p>
           <MenuButton />
         </div>
+
+        <div className="pre-or-sur-button">
+          <p>preffix or surffix button</p>
+          <RenderConsumer />
+        </div>
+
       </div>
     </div>
   );
 }
 
+function RenderConsumer () {
+  const [select, setSelect] = useState(true);
+  return (
+    <div onClick={() => {
+      setSelect(!select);
+    }}>
+      {
+        !!select
+        ? <ConsumerButton preffix={(<React.Fragment>preffix: 124</React.Fragment>)} />
+        : <ConsumerButton surffix={(<React.Fragment>surffix: 224</React.Fragment>)} />
+      }
+    </div>
+  )
+};
 export default button;
