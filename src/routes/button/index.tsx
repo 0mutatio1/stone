@@ -3,45 +3,56 @@ import { NormalButton } from './normal-button';
 import { MenuButton } from './menu-button';
 import { ConsumerButton } from './consumer-button';
 
-function button() {
+function SButton() {
   return (
     <div className="button-container">
-      <div className="normal-button-container">
-        <div className="default">
-          <p>default button</p>
+
+      <div className="button-container__item">
+        <div className='button-container__item_title'>default button</div>
+        <div className='button-container__item_content'>
           <NormalButton />
         </div>
+      </div>
 
-        <div className="custom-onclick">
-          <p>button with custom click</p>
+      <div className="button-container__item">
+        <div className='button-container__item_title'>button with custom click</div>
+        <div className='button-container__item_content'>
           <NormalButton
             onClick={() => {
               alert('click');
             }}
           />
         </div>
+      </div>
 
-        <div className="custom-color">
-          <p>button with custom color</p>
+      <div className="button-container__item">
+        <div className='button-container__item_title'>button with custom color</div>
+        <div className='button-container__item_content'>
           <NormalButton color="red" />
         </div>
+      </div>
 
-        <div className="custom-size">
-          <p>button with custom size</p>
+      <div className="button-container__item">
+        <div className='button-container__item_title'>button with custom size</div>
+        <div className='button-container__item_content'>
           <NormalButton size={40} />
         </div>
+      </div>
 
-        <div className="default-menu-button">
-          <p>default menu button</p>
+      <div className="button-container__item">
+        <div className='button-container__item_title'>default menu button</div>
+        <div className='button-container__item_content'>
           <MenuButton />
         </div>
+      </div>
 
-        <div className="pre-or-sur-button">
-          <p>preffix or surffix button</p>
+      <div className="button-container__item">
+        <div className='button-container__item_title'>preffix or surffix button</div>
+        <div className='button-container__item_content'>
           <RenderConsumer />
         </div>
-
       </div>
+
     </div>
   );
 }
@@ -60,4 +71,4 @@ function RenderConsumer () {
     </div>
   )
 };
-export default button;
+export default SButton;
