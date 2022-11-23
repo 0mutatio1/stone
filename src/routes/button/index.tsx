@@ -28,14 +28,20 @@ function SButton() {
       <div className="button-container__item">
         <div className='button-container__item_title'>button with custom color</div>
         <div className='button-container__item_content'>
-          <NormalButton color="red" />
+          <NormalButton />
+          <NormalButton type="waring" />
+          <NormalButton type="error" />
+          <NormalButton type="success" />
         </div>
       </div>
 
       <div className="button-container__item">
         <div className='button-container__item_title'>button with custom size</div>
         <div className='button-container__item_content'>
+          <NormalButton />
+          <NormalButton size={30} />
           <NormalButton size={40} />
+          <NormalButton size={50} />
         </div>
       </div>
 
