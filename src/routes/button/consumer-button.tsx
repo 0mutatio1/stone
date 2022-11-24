@@ -6,7 +6,7 @@ import "./index.scss";
 interface Properties {
   text?: string;
   size?: string;
-  type?: string;
+  color?: string;
   plain?: boolean;
   preffix?: JSX.Element;
   surffix?: JSX.Element;
@@ -16,7 +16,7 @@ interface Properties {
 const defualtProperties = {
   text: 'click to change preffix or surffix',
   size: 'medium',
-  type: 'primary',
+  color: 'primary',
   plain: false,
   preffix: (<></>),
   surffix: (<></>),
@@ -28,7 +28,7 @@ const defualtProperties = {
 export const ConsumerButton: FC<Properties> = ({
   text,
   size = 'medium',
-  type = 'primary',
+  color = 'primary',
   plain = false,
   preffix = (<></>),
   surffix = (<></>),
@@ -36,13 +36,13 @@ export const ConsumerButton: FC<Properties> = ({
     console.log(e);
   },
 }) => {
-  type = (Object.keys(COLOR).includes(type)) ? type : 'primary';
+  color = (Object.keys(COLOR).includes(color)) ? color : 'primary';
   size = (Object.keys(SIZE).includes(size)) ? size : 'medium';
   let style = {
     minWidth: SIZE[size].width,
     height: SIZE[size].height,
-    color: COLOR[type].color,
-    backgroundColor: COLOR[type].backgroundColor,
+    color: COLOR[color].color,
+    backgroundColor: COLOR[color].backgroundColor,
     border: 'none',
     borderRadius: '5px',
     padding: '0',
@@ -51,18 +51,18 @@ export const ConsumerButton: FC<Properties> = ({
   };
 
   const containerStyle = {
-    color: COLOR[type].color,
-    backgroundColor: COLOR[type].backgroundColor,
-    border: `1px solid ${COLOR[type].backgroundColor}`,
+    color: COLOR[color].color,
+    backgroundColor: COLOR[color].backgroundColor,
+    border: `1px solid ${COLOR[color].backgroundColor}`,
     borderRadius: '5px'
   };
 
   if (plain) {
-    style.color = PLAIN_COLOR[type].color;
-    style.backgroundColor = PLAIN_COLOR[type].backgroundColor;
-    containerStyle.color =  PLAIN_COLOR[type].color;
-    containerStyle.backgroundColor =  PLAIN_COLOR[type].backgroundColor;
-    containerStyle.border = `1px solid ${PLAIN_COLOR[type].color}`;
+    style.color = PLAIN_COLOR[color].color;
+    style.backgroundColor = PLAIN_COLOR[color].backgroundColor;
+    containerStyle.color =  PLAIN_COLOR[color].color;
+    containerStyle.backgroundColor =  PLAIN_COLOR[color].backgroundColor;
+    containerStyle.border = `1px solid ${PLAIN_COLOR[color].color}`;
   }
 
   return (
@@ -70,7 +70,7 @@ export const ConsumerButton: FC<Properties> = ({
       <div className="button-container" style={containerStyle}>
         {preffix}
         <button
-          type="button"
+          color="button"
           style={style}
           onClick={($e) => {
             onClick($e);

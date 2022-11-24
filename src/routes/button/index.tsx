@@ -30,10 +30,10 @@ function SButton() {
         <div className='button-container__item_title'>button with custom color</div>
         <div className='button-container__item_content'>
           <NormalButton />
-          <NormalButton type="success" />
-          <NormalButton type="warning" />
-          <NormalButton type="error" />
-          <NormalButton type="info" />
+          <NormalButton color="success" />
+          <NormalButton color="warning" />
+          <NormalButton color="error" />
+          <NormalButton color="info" />
         </div>
       </div>
 
@@ -41,10 +41,21 @@ function SButton() {
         <div className='button-container__item_title'>plain button</div>
         <div className='button-container__item_content'>
           <NormalButton plain/>
-          <NormalButton type="success" plain />
-          <NormalButton type="warning" plain />
-          <NormalButton type="error" plain />
-          <NormalButton type="info" plain />
+          <NormalButton color="success" plain />
+          <NormalButton color="warning" plain />
+          <NormalButton color="error" plain />
+          <NormalButton color="info" plain />
+        </div>
+      </div>
+
+      <div className="button-container__item">
+        <div className='button-container__item_title'>text button</div>
+        <div className='button-container__item_content'>
+          <NormalButton type='text' />
+          <NormalButton color="success" type='text' />
+          <NormalButton color="warning" type='text' />
+          <NormalButton color="error" type='text' />
+          <NormalButton color="info" type='text' />
         </div>
       </div>
 
@@ -60,8 +71,8 @@ function SButton() {
       <div className="button-container__item">
         <div className='button-container__item_title'>menu button</div>
         <div className='button-container__item_content'>
-          <MenuButton />
-          <MenuButton plain />
+          <MenuButton onClick={(val) => { alert(val); }} />
+          <MenuButton plain onClick={(val) => { alert(val); }} />
         </div>
       </div>
 
@@ -80,15 +91,15 @@ function SButton() {
 const RenderConsumer: FC<{ plain?: boolean; }> = ({ plain = false }) => {
   const [select, setSelect] = useState(true);
   return (
-    <div onClick={() => {
-      setSelect(!select);
-    }}>
+    <>
       {
         !!select
-        ? <ConsumerButton plain={plain} preffix={(<React.Fragment>preffix: 124</React.Fragment>)} />
-        : <ConsumerButton plain={plain} surffix={(<React.Fragment>surffix: 224</React.Fragment>)} />
+        ? <ConsumerButton plain={plain} onClick={() => { setSelect(!select); }}
+            preffix={(<span onClick={() => { alert('preffix'); }}>preffix: 124</span>)} />
+        : <ConsumerButton plain={plain} onClick={() => { setSelect(!select); }}
+            surffix={(<span onClick={() => { alert('surffix'); }}>surffix: 224</span>)} />
       }
-    </div>
+    </>
   )
 };
 export default SButton;

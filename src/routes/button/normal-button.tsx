@@ -5,6 +5,7 @@ import { SIZE } from '../../untils/size';
 interface Properties {
   text?: string,
   size?: string,
+  color?: string,
   type?: string,
   plain?: boolean,
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
@@ -13,38 +14,50 @@ interface Properties {
 const defualtProperties = {
   text: 'button',
   size: 'medium',
-  type: 'primary',
+  color: 'primary',
+  type: 'button',
   plain: false,
   onClick: undefined,
 };
 
 export const NormalButton: FC<Properties> = ({
-  text, size = 'medium', type = 'primary', plain = false, onClick,
+  text, size = 'medium', color = 'primary', plain = false, type= 'button', onClick,
 }) => {
-  type = (Object.keys(COLOR).includes(type)) ? type : 'primary';
+  color = (Object.keys(COLOR).includes(color)) ? color : 'primary';
   size = (Object.keys(SIZE).includes(size)) ? size : 'medium';
-  let style = {
+  const style = {
     minWidth: SIZE[size].width,
     height: SIZE[size].height,
-    color: COLOR[type].color,
-    backgroundColor: COLOR[type].backgroundColor,
-    border: `1px solid ${COLOR[type].backgroundColor}`,
+    color: COLOR[color].color,
+    backgroundColor: COLOR[color].backgroundColor,
+    border: `1px solid ${COLOR[color].backgroundColor}`,
     borderRadius: '5px',
     padding: '0',
     fontSize: SIZE[size].fontSize,
     lineHeight: SIZE[size].height
   };
 
+  const textButtonStyle = {
+    color: PLAIN_COLOR[color].color,
+    backgroundColor: 'transparent',
+    border: 'none',
+    fontSize: SIZE[size].fontSize
+  };
+
   if (plain) {
-    style.color = PLAIN_COLOR[type].color;
-    style.backgroundColor = PLAIN_COLOR[type].backgroundColor;
-    style.border = `1px solid ${PLAIN_COLOR[type].color}`;
+    style.color = PLAIN_COLOR[color].color;
+    style.backgroundColor = PLAIN_COLOR[color].backgroundColor;
+    style.border = `1px solid ${PLAIN_COLOR[color].color}`;
   }
 
   return (
-    <button type="button" onClick={onClick} style={style}>
-      {text}
-    </button>
+    <>
+      {
+        type === 'text'
+        ? <span style={textButtonStyle}>{text}</span>
+        : <button color="button" onClick={onClick} style={style}> {text} </button>
+      }
+    </>
   )
 };
 

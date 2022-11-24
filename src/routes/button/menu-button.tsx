@@ -6,7 +6,7 @@ import "./index.scss";
 interface Properties {
   text?: string;
   size?: string;
-  type?: string;
+  color?: string;
   plain?: boolean;
   list?: any[];
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -15,7 +15,7 @@ interface Properties {
 const defualtProperties = {
   text: 'click menu',
   size: 'medium',
-  type: 'primary',
+  color: 'primary',
   plain: false,
   list: ['react', 'vue', 'angular'],
   onClick: (val: any) => {
@@ -26,20 +26,20 @@ const defualtProperties = {
 export const MenuButton: FC<Properties> = ({
   text,
   size = 'medium',
-  type = 'primary',
+  color = 'primary',
   plain = false,
   onClick = (val: any) => {
     console.log(val);
   },
   list = [],
 }) => {
-  type = (Object.keys(COLOR).includes(type)) ? type : 'primary';
+  color = (Object.keys(COLOR).includes(color)) ? color : 'primary';
   size = (Object.keys(SIZE).includes(size)) ? size : 'medium';
   const style = {
     minWidth: SIZE[size].width,
     height: SIZE[size].height,
-    color: COLOR[type].color,
-    backgroundColor: COLOR[type].backgroundColor,
+    color: COLOR[color].color,
+    backgroundColor: COLOR[color].backgroundColor,
     border: 'none',
     padding: '0',
     borderRadius: '5px',
@@ -48,18 +48,18 @@ export const MenuButton: FC<Properties> = ({
   };
 
   const containerStyle = {
-    color: COLOR[type].color,
-    backgroundColor: COLOR[type].backgroundColor,
-    border: `1px solid ${COLOR[type].backgroundColor}`,
+    color: COLOR[color].color,
+    backgroundColor: COLOR[color].backgroundColor,
+    border: `1px solid ${COLOR[color].backgroundColor}`,
     borderRadius: '5px'
   };
 
   if (plain) {
-    style.color = PLAIN_COLOR[type].color;
-    style.backgroundColor = PLAIN_COLOR[type].backgroundColor;
-    containerStyle.color =  PLAIN_COLOR[type].color;
-    containerStyle.backgroundColor =  PLAIN_COLOR[type].backgroundColor;
-    containerStyle.border = `1px solid ${PLAIN_COLOR[type].color}`;
+    style.color = PLAIN_COLOR[color].color;
+    style.backgroundColor = PLAIN_COLOR[color].backgroundColor;
+    containerStyle.color =  PLAIN_COLOR[color].color;
+    containerStyle.backgroundColor =  PLAIN_COLOR[color].backgroundColor;
+    containerStyle.border = `1px solid ${PLAIN_COLOR[color].color}`;
   }
 
   const [isContracted, setIsContracted] = useState(true);
@@ -75,7 +75,7 @@ export const MenuButton: FC<Properties> = ({
         }}
       >
         <button
-          type="button"
+          color="button"
           style={style}
         >
           {value}
