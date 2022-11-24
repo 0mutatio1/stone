@@ -3,10 +3,14 @@ import React from 'react';
 const Table = () => (
   <table>
     <thead>
-      <th>hh</th>
+      <tr>
+        <th>hh</th>
+      </tr>
     </thead>
     <tbody>
-      <td>kkk</td>
+      <tr>
+        <td>kkk</td>
+      </tr>
     </tbody>
   </table>
 );

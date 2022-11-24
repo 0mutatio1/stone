@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { COLOR, PLAIN_COLOR } from '../../untils/color';
 import { SIZE } from '../../untils/size';
+import "./index.scss";
 
 interface Properties {
   text?: string,
@@ -20,33 +21,11 @@ const defualtProperties = {
   onClick: undefined,
 };
 
-export const NormalButton: FC<Properties> = ({
-  text, size = 'medium', color = 'primary', plain = false, type= 'button', onClick,
-}) => {
+export const NormalButton: FC<Properties> = ({ text, size = 'medium', color = 'primary', plain = false, type= 'button', onClick }) => {
   color = (Object.keys(COLOR).includes(color)) ? color : 'primary';
   size = (Object.keys(SIZE).includes(size)) ? size : 'medium';
-  const style = {
-    minWidth: SIZE[size].width,
-    height: SIZE[size].height,
-    color: COLOR[color].color,
-    backgroundColor: COLOR[color].backgroundColor,
-    border: `1px solid ${COLOR[color].backgroundColor}`,
-    borderRadius: '5px',
-    padding: '0',
-    fontSize: SIZE[size].fontSize,
-    lineHeight: SIZE[size].height
-  };
-
-  const textButtonStyle = {
-    color: PLAIN_COLOR[color].color,
-    backgroundColor: 'transparent',
-    border: 'none',
-    fontSize: SIZE[size].fontSize
-  };
-
+  const style = { border: `1px solid ${COLOR[color].backgroundColor}` };
   if (plain) {
-    style.color = PLAIN_COLOR[color].color;
-    style.backgroundColor = PLAIN_COLOR[color].backgroundColor;
     style.border = `1px solid ${PLAIN_COLOR[color].color}`;
   }
 
@@ -54,8 +33,8 @@ export const NormalButton: FC<Properties> = ({
     <>
       {
         type === 'text'
-        ? <span style={textButtonStyle}>{text}</span>
-        : <button color="button" onClick={onClick} style={style}> {text} </button>
+        ? <span className={`${color}-text button button-${size} text-button`}>{text}</span>
+        : <button className={`${color} ${plain ? color + '-plain' : ''} button button-${size}`} type="button" onClick={onClick} style={style}> {text} </button>
       }
     </>
   )

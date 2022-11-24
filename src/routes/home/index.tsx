@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import Menu from '../menu/index';
 import './index.scss';
 
 const Home: FC = () => (
@@ -8,20 +9,7 @@ const Home: FC = () => (
       <div className="title">
         Stone UI
       </div>
-      <ul className="components">
-        <li className="button">
-          <Link to="/home/button">Button</Link>
-        </li>
-        <li className="table">
-          <Link to="/home/table">Table</Link>
-        </li>
-        <li className="dialog">
-          <Link to="/home/dialog">Dialog</Link>
-        </li>
-        <li className="form">
-          <Link to="/home/form">Form</Link>
-        </li>
-      </ul>
+      <Menu />
     </div>
     <div className="right">
       <Outlet />

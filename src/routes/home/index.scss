@@ -1,37 +1,19 @@
 .home {
   display: flex;
   height: 100vh;
-  // todo upgrade to global
-  a:link,
-  a:visited,
-  a:hover,
-  a:active {
-    text-decoration: none;
-    color: black;
-  }
   .left {
     width: 15%;
-    height: 100%;
+    height: calc(100vh - 40px);
     padding: 20px;
     border-right: 1px solid #e7e7e7;
     .title {
       font-size: 20px;
     }
-    .components {
-      margin: 0px;
-      padding: 0px;
-      li {
-        list-style: none;
-        margin-top: 10px;
-        font-size: 15px;
-        font-weight: bold;
-        color: rgb(24, 11, 3);
-      }
-    }
   }
   .right {
-    height: 100%;
+    height: calc(100vh - 40px);
     width: 100%;
-    margin: 10px;
+    padding: 20px;
+    overflow-y: auto;
   }
 }
