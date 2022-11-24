@@ -1,48 +1,45 @@
 import React, { FC } from 'react';
+import { COLOR, PLAIN_COLOR } from '../../untils/color';
+import { SIZE } from '../../untils/size';
 
 interface Properties {
   text?: string,
-  size?: number,
-  type?: any,
+  size?: string,
+  type?: string,
+  plain?: boolean,
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const defualtProperties = {
-  text: 'click',
-  size: 20,
+  text: 'button',
+  size: 'medium',
   type: 'primary',
+  plain: false,
   onClick: undefined,
 };
 
-const COLOR: any = {
-  primary: {
-    color: 'white',
-    backgroundColor: '#3b6f9e'
-  },
-  warning: {
-    color: 'white',
-    backgroundColor: '#3b6fff9e'
-  },
-  error: {
-    color: 'white',
-    backgroundColor: '#3b6fff9e'
-  },
-  success: {
-    color: 'white',
-    backgroundColor: '#3b6fff9e'
-  },
-}
 export const NormalButton: FC<Properties> = ({
-  text, size = 20, type = 'primary', onClick,
+  text, size = 'medium', type = 'primary', plain = false, onClick,
 }) => {
+  type = (Object.keys(COLOR).includes(type)) ? type : 'primary';
+  size = (Object.keys(SIZE).includes(size)) ? size : 'medium';
   let style = {
-    width: size + 20 +'px',
-    height: size +'px',
+    minWidth: SIZE[size].width,
+    height: SIZE[size].height,
     color: COLOR[type].color,
     backgroundColor: COLOR[type].backgroundColor,
-    border: 'none',
-    padding: '0px'
+    border: `1px solid ${COLOR[type].backgroundColor}`,
+    borderRadius: '5px',
+    padding: '0',
+    fontSize: SIZE[size].fontSize,
+    lineHeight: SIZE[size].height
   };
+
+  if (plain) {
+    style.color = PLAIN_COLOR[type].color;
+    style.backgroundColor = PLAIN_COLOR[type].backgroundColor;
+    style.border = `1px solid ${PLAIN_COLOR[type].color}`;
+  }
 
   return (
     <button type="button" onClick={onClick} style={style}>
