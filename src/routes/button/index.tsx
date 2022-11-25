@@ -5,18 +5,18 @@ import { ConsumerButton } from './consumer-button';
 
 function SButton() {
   return (
-    <div className="button-container">
+    <div className="stone-container">
 
-      <div className="button-container__item">
-        <div className='button-container__item_title'>default button</div>
-        <div className='button-container__item_content'>
+      <div className="stone-container__item">
+        <div className='stone-container__item_title'>default button</div>
+        <div className='stone-container__item_content'>
           <NormalButton />
         </div>
       </div>
 
-      <div className="button-container__item">
-        <div className='button-container__item_title'>button with custom click</div>
-        <div className='button-container__item_content'>
+      <div className="stone-container__item">
+        <div className='stone-container__item_title'>button with custom click</div>
+        <div className='stone-container__item_content'>
           <NormalButton
             text="click"
             onClick={() => {
@@ -26,9 +26,9 @@ function SButton() {
         </div>
       </div>
 
-      <div className="button-container__item">
-        <div className='button-container__item_title'>button with custom color</div>
-        <div className='button-container__item_content'>
+      <div className="stone-container__item">
+        <div className='stone-container__item_title'>button with custom color</div>
+        <div className='stone-container__item_content'>
           <NormalButton />
           <NormalButton color="success" />
           <NormalButton color="warning" />
@@ -37,9 +37,9 @@ function SButton() {
         </div>
       </div>
 
-      <div className="button-container__item">
-        <div className='button-container__item_title'>plain button</div>
-        <div className='button-container__item_content'>
+      <div className="stone-container__item">
+        <div className='stone-container__item_title'>plain button</div>
+        <div className='stone-container__item_content'>
           <NormalButton plain/>
           <NormalButton color="success" plain />
           <NormalButton color="warning" plain />
@@ -48,9 +48,9 @@ function SButton() {
         </div>
       </div>
 
-      <div className="button-container__item">
-        <div className='button-container__item_title'>text button</div>
-        <div className='button-container__item_content'>
+      <div className="stone-container__item">
+        <div className='stone-container__item_title'>text button</div>
+        <div className='stone-container__item_content'>
           <NormalButton type='text' />
           <NormalButton color="success" type='text' />
           <NormalButton color="warning" type='text' />
@@ -59,26 +59,26 @@ function SButton() {
         </div>
       </div>
 
-      <div className="button-container__item">
-        <div className='button-container__item_title'>button with custom size</div>
-        <div className='button-container__item_content'>
+      <div className="stone-container__item">
+        <div className='stone-container__item_title'>button with custom size</div>
+        <div className='stone-container__item_content'>
           <NormalButton size="small" />
           <NormalButton size="medium" />
           <NormalButton size="large" />
         </div>
       </div>
 
-      <div className="button-container__item">
-        <div className='button-container__item_title'>menu button</div>
-        <div className='button-container__item_content'>
+      <div className="stone-container__item">
+        <div className='stone-container__item_title'>menu button</div>
+        <div className='stone-container__item_content'>
           <MenuButton onClick={(val) => { alert(val); }} />
           <MenuButton plain onClick={(val) => { alert(val); }} />
         </div>
       </div>
 
-      <div className="button-container__item">
-        <div className='button-container__item_title'>preffix or surffix button</div>
-        <div className='button-container__item_content'>
+      <div className="stone-container__item">
+        <div className='stone-container__item_title'>preffix or surffix button</div>
+        <div className='stone-container__item_content'>
           <RenderConsumer />
           <RenderConsumer plain/>
         </div>

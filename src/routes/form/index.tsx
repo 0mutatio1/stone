@@ -1,9 +1,24 @@
-import React, { FC } from 'react';
+import React, { useState, FC } from 'react';
+import './index.scss';
 
-const Form: FC = () => (
-  <div className="form-container">
-    Form
-  </div>
-);
+function SForm() {
+  return (
+    <div className="stone-container">
 
-export default Form;
+      <div className="stone-container__item">
+        <div className='stone-container__item_title'>default form</div>
+        <div className='stone-container__item_content'>
+        </div>
+      </div>
+
+      <div className="stone-container__item">
+        <div className='stone-container__item_title'>form</div>
+        <div className='stone-container__item_content'>
+        </div>
+      </div>
+
+    </div>
+  );
+}
+
+export default SForm;

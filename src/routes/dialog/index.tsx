@@ -1,9 +1,24 @@
-import React, { FC } from 'react';
+import React, { useState, FC } from 'react';
+import './index.scss';
 
-const Dialog: FC = () => (
-  <div className="dialog-container">
-    Dialog
-  </div>
-);
+function SDialog() {
+  return (
+    <div className="stone-container">
 
-export default Dialog;
+      <div className="stone-container__item">
+        <div className='stone-container__item_title'>default dialog</div>
+        <div className='stone-container__item_content'>
+        </div>
+      </div>
+
+      <div className="stone-container__item">
+        <div className='stone-container__item_title'>dialog</div>
+        <div className='stone-container__item_content'>
+        </div>
+      </div>
+
+    </div>
+  );
+}
+
+export default SDialog;
