@@ -1,0 +1,20 @@
+@import '../../statics/style/common.scss' ;
+.stone-table {
+    width: 100%;
+    &-head {
+        &__row {
+            width: 100%;
+            &_cell {
+                text-align: center;
+            }
+        }
+    }
+    &-body {
+        &__row {
+            width: 100%;
+            &_cell {
+                text-align: center;
+            }
+        }
+    }
+}

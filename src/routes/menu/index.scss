@@ -1,0 +1,41 @@
+.menu-list {
+  margin: 0px;
+  padding: 0px;
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    text-decoration: none;
+    color: black;
+  }
+  .is-inactive {
+    background-color: transparent;
+    box-shadow: none;
+    a {
+      color: black;
+    }
+  }
+  .is-active {
+    background-color: #e8eef3;
+    box-shadow: 2px 2px 3px #d8e0e7;
+    a {
+      color: rgb(9, 94, 252);
+    }
+  }
+  &__item {
+    list-style: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 8px;
+    a {
+      width: 100%;
+    }
+  }
+  &__item:hover {
+    background-color: #dfe2e6;
+    a {
+      color: rgb(55, 139, 248);
+    }
+  }
+}
