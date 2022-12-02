@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/filename-case */
 import React, { FC } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './statics/images/logo.svg';
