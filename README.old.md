@@ -1,2 +1,0 @@
-# Stone
-stone ui 
