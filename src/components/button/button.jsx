@@ -1,9 +1,13 @@
 
-
-const Button = ({primary, disabled, label, onClick}) => {
+const Button = (props) => {
+    let { primary, disabled, label, onClick } = props;
     return (
         <>
-            <button className={primary} disabled={disabled} onClick={onClick}>
+            <button
+                className={primary}
+                disabled={disabled}
+                onClick={onClick}
+            >
                 {label}
             </button>
         </>
