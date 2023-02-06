@@ -6,13 +6,15 @@
 .pnp.js
 
 # editor
-.vscode/
+/.vscode/
 
 # testing
 /coverage
 
 # production
 /build
+/target
+/dist
 
 # misc
 .DS_Store
